@@ -51,15 +51,30 @@ export default function Games({ account }) {
     },
   ];
 
-  function formatStartDate(isoString) {
-    const d = new Date(isoString);
-    const dd = String(d.getDate()).padStart(2, "0");
-    const mm = String(d.getMonth() + 1).padStart(2, "0");
-    const yyyy = d.getFullYear();
-    const hh = String(d.getHours()).padStart(2, "0");
-    const min = String(d.getMinutes()).padStart(2, "0");
-    return `${dd}.${mm}.${yyyy} ${hh}:${min}`;
-  }
+  // function formatStartDate(isoString) {
+  //   const d = new Date(isoString);
+  //   const dd = String(d.getDate()).padStart(2, "0");
+  //   const mm = String(d.getMonth() + 1).padStart(2, "0");
+  //   const yyyy = d.getFullYear();
+  //   const hh = String(d.getHours()).padStart(2, "0");
+  //   const min = String(d.getMinutes()).padStart(2, "0");
+  //   return `${dd}.${mm}.${yyyy} ${hh}:${min}`;
+  // }
+
+  const formatStartDate = (dateStr) => {
+    const date = new Date(dateStr);
+    const formatter = new Intl.DateTimeFormat("uk-UA", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      timeZone: "UTC",
+      hour12: false,
+    });
+
+    return formatter.format(date) + " UTC";
+  };
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 rounded-lg">

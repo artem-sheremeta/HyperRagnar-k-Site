@@ -37,6 +37,9 @@ export default function Leaderboard({ account }) {
   const lastUpdated = new Date().toLocaleString();
   const nextRewards = new Date(Date.now() + 6 * 3600_000).toLocaleString();
 
+  const nextUpdated = "22.06.2025 12.00 UTC";
+  const nextReward = "22.06.2025 12.00 UTC";
+
   useEffect(() => {
     setLoading(true);
     const t = setTimeout(() => setLoading(false), 300);
@@ -48,8 +51,8 @@ export default function Leaderboard({ account }) {
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-2 sm:space-y-0">
         <h2 className="text-xl text-gray-100 font-semibold">Leaderboard</h2>
         <div className="text-gray-400 text-sm space-x-4">
-          <span>Next Updated: {lastUpdated}</span>
-          <span>Rewards: {nextRewards}</span>
+          <span>Next Updated: {nextReward}</span>
+          <span>Rewards: {nextUpdated}</span>
         </div>
       </div>
 
