@@ -125,7 +125,7 @@ export default function App() {
     shadow-lg
   "
       >
-        <img src="/images/logo.svg" alt="Logo" className="w-6 h-6" />
+        <img src="./images/logo.svg" alt="Logo" className="w-6 h-6" />
         <span className="text-gray-200 font-medium">HYPE:</span>
         {isFetchingPrice ? (
           <span className="text-gray-400 italic">Loading…</span>
