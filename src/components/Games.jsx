@@ -62,7 +62,7 @@ export default function Games({ account }) {
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 overflow-y-auto max-h-[60vh] rounded-lg">
       {gameList.map(({ id, label, img, preview, status, link, startDate }) => (
         <div
           key={id}
@@ -102,7 +102,7 @@ export default function Games({ account }) {
               onClick={(e) => {
                 e.stopPropagation();
                 if (!account) {
-                  alert("Будь ласка, спочатку підключіть гаманець.");
+                  alert("Please connect your wallet.");
                   return;
                 }
                 if (link) {

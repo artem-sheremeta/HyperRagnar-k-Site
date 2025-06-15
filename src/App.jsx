@@ -90,7 +90,7 @@ export default function App() {
     });
   };
 
-  const backgroundImageUrl = "/images/background.png";
+  const backgroundImageUrl = "./images/background.png";
   const tabs = [
     { key: "games", label: "Games" },
     { key: "leaderboard", label: "Leaderboard" },
@@ -264,7 +264,7 @@ export default function App() {
             </a>
           </div>
 
-          <div className="flex-1 bg-gray-700/60 backdrop-blur-sm rounded-md overflow-hidden">
+          <div className="flex-2 bg-gray-700/60 backdrop-blur-sm rounded-md overflow-hidden">
             {activeTab === "games" && (
               <Games account={account} onGameClick={() => {}} />
             )}

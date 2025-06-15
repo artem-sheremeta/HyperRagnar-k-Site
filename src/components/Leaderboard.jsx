@@ -69,7 +69,7 @@ export default function Leaderboard({ account }) {
         <p className="text-gray-400 italic">Loading leaderboard…</p>
       ) : (
         <>
-          <div className="overflow-y-auto max-h-[42vh] rounded-lg">
+          <div className="overflow-y-auto max-h-[40vh] rounded-lg">
             <table className="w-full bg-gray-700 rounded-lg overflow-hidden">
               <thead className="bg-gray-600">
                 <tr>

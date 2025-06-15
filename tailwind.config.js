@@ -1,4 +1,3 @@
-// tailwind.config.js
 import aspectRatio from "@tailwindcss/aspect-ratio";
 
 /** @type {import('tailwindcss').Config} */
@@ -17,8 +16,5 @@ export default {
     },
     extend: {},
   },
-  plugins: [
-    aspectRatio,
-    // за потреби можна додавати ще інші плагіни
-  ],
+  plugins: [aspectRatio],
 };

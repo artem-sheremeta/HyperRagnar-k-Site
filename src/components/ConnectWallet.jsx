@@ -190,7 +190,7 @@ export default function ConnectWallet({
 
           {/* Logo */}
           <img
-            src="/images/logo.svg"
+            src="./images/logo.svg"
             alt="Logo"
             className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
           />
