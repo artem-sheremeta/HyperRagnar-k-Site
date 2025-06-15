@@ -22,8 +22,8 @@ export default function App() {
   const [activeTab, setActiveTab] = useState("games");
 
   useEffect(() => {
-    const minWidth = 1024;
-    const minHeight = 680;
+    const minWidth = 980;
+    const minHeight = 540;
 
     function checkSize() {
       const tooNarrow = window.innerWidth < minWidth;
