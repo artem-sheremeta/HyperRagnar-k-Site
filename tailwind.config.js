@@ -13,6 +13,7 @@ export default {
       "2xl": "1536px",
       // …та додаємо власний на 1920px:
       "3xl": "1920px",
+      "max-h-768": { raw: "(max-height: 768px)" },
     },
     extend: {},
   },
