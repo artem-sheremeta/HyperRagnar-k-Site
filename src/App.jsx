@@ -144,7 +144,7 @@ export default function App() {
             ${formatPrice(priceHype)}
           </span>
         )}
-        <span className="text-gray-200 font-medium">⏳ SOON: soon</span>
+        <span className="text-gray-200 font-medium">⏳ RAGNAR: soon</span>
       </div>
 
       {/* 2) ConnectWallet*/}
