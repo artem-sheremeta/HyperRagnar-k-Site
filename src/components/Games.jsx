@@ -5,40 +5,40 @@ export default function Games({ account }) {
     {
       id: "game1",
       label: "Snowfall",
-      img: null,
-      preview: "./previews/animation1.mp4",
+      img: "./images/snowfall.png",
+      preview: null,
       status: "New",
       startDate: "2025-06-20T12:00:00Z",
     },
     {
       id: "game2",
       label: "Poker Duel",
-      img: null,
-      preview: "./previews/animation2.mp4",
+      img: "./images/pokerDuel.png",
+      preview: null,
       status: "New",
       startDate: "2025-06-20T12:00:00Z",
     },
     {
       id: "game3",
       label: "Ragnar Edition",
-      img: null,
-      preview: "./previews/game1.mp4",
+      img: "./images/ragnarEdition.png",
+      preview: null,
       status: "New",
       startDate: "2025-06-20T12:00:00Z",
     },
     {
       id: "game4",
       label: "Trade Clash",
-      img: null,
-      preview: "./previews/animation11.mp4",
+      img: "./images/tradeClash.png",
+      preview: null,
       status: "New",
       startDate: "2025-06-20T12:00:00Z",
     },
     {
       id: "game5",
-      label: "List of Ragnar",
-      img: null,
-      preview: "./previews/game1.mp4",
+      label: "Last of Ragnar",
+      img: "./images/lastOfRagnar.png",
+      preview: null,
       status: "New",
       startDate: "2025-06-20T12:00:00Z",
     },
@@ -62,7 +62,7 @@ export default function Games({ account }) {
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 overflow-y-auto max-h-[60vh] rounded-lg">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 rounded-lg">
       {gameList.map(({ id, label, img, preview, status, link, startDate }) => (
         <div
           key={id}

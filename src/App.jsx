@@ -11,15 +11,16 @@ import "./styles/app.css";
 export default function App() {
   const [account, setAccount] = useState(null);
   const [balances, setBalances] = useState({
-    hype: null,
-    wHype: null,
-    hypr: null,
+    hype: 0,
+    wHype: 0,
+    hypr: 0,
   });
 
   const [priceHype, setPriceHype] = useState(null);
   const [isFetchingPrice, setIsFetchingPrice] = useState(false);
 
   const [activeTab, setActiveTab] = useState("games");
+  const [isShortScreen, setIsShortScreen] = useState(false);
 
   useEffect(() => {
     const minWidth = 980;
@@ -53,6 +54,15 @@ export default function App() {
     checkSize();
     window.addEventListener("resize", checkSize);
     return () => window.removeEventListener("resize", checkSize);
+  }, []);
+
+  useEffect(() => {
+    const checkHeight = () => {
+      setIsShortScreen(window.innerHeight <= 768);
+    };
+    checkHeight();
+    window.addEventListener("resize", checkHeight);
+    return () => window.removeEventListener("resize", checkHeight);
   }, []);
 
   useEffect(() => {
@@ -150,12 +160,12 @@ export default function App() {
         <div
           className="
           w-full sm:w-[95%] md:w-4/5 lg:w-2/3 max-w-[1400px]
-          h-[80vh]
+          h-[81.2vh]
           3xl:h-[70vh]
-          max-h-768:h-[75vh]
          bg-gray-800/50 backdrop-blur-lg
          ring-1 ring-white/20 rounded-3xl
-          p-6 sm:p-8 shadow-2xl flex flex-col
+          p-6 sm:p-8 shadow-2xl 
+          flex flex-col
            "
         >
           {/* 3.1) Tabs */}
@@ -265,9 +275,11 @@ export default function App() {
             </a>
           </div>
 
-          <div className="flex-2 bg-gray-700/60 backdrop-blur-sm rounded-md overflow-hidden">
+          <div className="flex-1 relative bg-gray-700/60 backdrop-blur-sm rounded-md overflow-hidden flex-col">
             {activeTab === "games" && (
-              <Games account={account} onGameClick={() => {}} />
+              <div className="absolute inset-0 overflow-y-auto p-2">
+                <Games account={account} onGameClick={() => {}} />
+              </div>
             )}
             {activeTab === "leaderboard" && <Leaderboard account={account} />}
             {activeTab === "docs" && (

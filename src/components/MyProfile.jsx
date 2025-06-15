@@ -5,7 +5,7 @@ const defaultGameStats = [
   { game: "Poker Duel", leaderboard: "# –", points: 0, rewards: "0 HYPE" },
   { game: "Ragnar Edition", leaderboard: "# –", points: 0, rewards: "0 HYPE" },
   { game: "Trade Clash", leaderboard: "# –", points: 0, rewards: "0 HYPE" },
-  { game: "List of Ragnar", leaderboard: "# –", points: 0, rewards: "0 HYPE" },
+  { game: "Last of Ragnar", leaderboard: "# –", points: 0, rewards: "0 HYPE" },
   { game: "Coming Soon", leaderboard: "–", points: "–", rewards: "–" },
 ];
 
@@ -86,7 +86,7 @@ export default function MyProfile({
             >
               <div className="text-xs text-gray-400 uppercase">{label}</div>
               <div className={`mt-1 font-semibold ${color} text-lg`}>
-                {value != null ? Number(value).toFixed(dec) : "—"}
+                {value != null ? Number(value).toFixed(dec) : "0"}
               </div>
             </div>
           ))}

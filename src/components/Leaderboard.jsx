@@ -5,7 +5,7 @@ const GAMES = [
   { id: "poker-duel", name: "Poker Duel" },
   { id: "ragnar-edition", name: "Ragnar Edition" },
   { id: "trade--clash", name: "Trade Clash" },
-  { id: "list-of-ragnar", name: "List of Ragnar" },
+  { id: "last-of-ragnar", name: "Last of Ragnar" },
 ];
 
 const REALISTIC = [

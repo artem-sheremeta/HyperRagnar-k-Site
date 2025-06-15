@@ -31,7 +31,6 @@ export default function ConnectWallet({
 
   useEffect(() => {
     if (!window.ethereum) {
-      setErrorMessage("Install MetaMask or another Web3 wallet");
       return;
     }
     const ethProvider = new ethers.providers.Web3Provider(
@@ -139,7 +138,10 @@ export default function ConnectWallet({
   }, [fmtNative, fmtWrapped]);
 
   const connect = async () => {
-    if (!provider) return;
+    if (!provider) {
+      setErrorMessage("Install MetaMask or another Web3 wallet");
+      return;
+    }
     try {
       setErrorMessage("");
       await provider.send("eth_requestAccounts", []);
@@ -185,7 +187,7 @@ export default function ConnectWallet({
         >
           {/* Balance */}
           <span className="font-mono text-green-400">
-            {totalBalance != null ? totalBalance.toFixed(3) : "—"}
+            {totalBalance != null ? totalBalance.toFixed(3) : "0"}
           </span>
 
           {/* Logo */}
@@ -239,9 +241,13 @@ export default function ConnectWallet({
           )}
         </div>
       ) : (
-        <button
-          onClick={connect}
-          className="
+        <div className="fixed top-1 right-4 z-50 flex flex-col items-end space-y-2">
+          {errorMessage && (
+            <div className="text-sm text-red-400">{errorMessage}</div>
+          )}
+          <button
+            onClick={connect}
+            className="
     fixed top-4 right-4 z-50
 
     bg-gray-700 hover:bg-gray-600
@@ -260,9 +266,10 @@ export default function ConnectWallet({
 
     transition-colors duration-150 ease-out
   "
-        >
-          Connect Wallet
-        </button>
+          >
+            Connect Wallet
+          </button>
+        </div>
       )}
     </div>
   );
