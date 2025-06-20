@@ -51,18 +51,9 @@ export default function Games({ account }) {
     },
   ];
 
-  // function formatStartDate(isoString) {
-  //   const d = new Date(isoString);
-  //   const dd = String(d.getDate()).padStart(2, "0");
-  //   const mm = String(d.getMonth() + 1).padStart(2, "0");
-  //   const yyyy = d.getFullYear();
-  //   const hh = String(d.getHours()).padStart(2, "0");
-  //   const min = String(d.getMinutes()).padStart(2, "0");
-  //   return `${dd}.${mm}.${yyyy} ${hh}:${min}`;
-  // }
-
   const formatStartDate = (dateStr) => {
     const date = new Date(dateStr);
+    date.setUTCDate(date.getUTCDate() + 2);
     const formatter = new Intl.DateTimeFormat("uk-UA", {
       day: "2-digit",
       month: "2-digit",
